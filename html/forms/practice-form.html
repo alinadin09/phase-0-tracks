@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice Form 2.4</title>
+</head>
+<body>
+	
+	<form name="Basic Information" action="success.html">
+		<fieldset>
+			<div>
+				<label>Gender:</label>
+				<select name="gender">
+					<option value="Select">Male</option>
+					<option value="Select">Female</option>
+					<option value="Select">Prefer not to answer</option>
+					
+				</select>
+			</div>
+			<p>
+			<div>
+				<label>First Name</label>
+				<input type="text" name="firstname">
+			</div>
+			<p>
+		</fieldset>
+		<fieldset>
+			
+			<legend>Favorite Coffee Shop in the City!</legend>
+			    <p>
+			      <input type="radio" name="size" id="size_1" value="fourbarrel" />
+			      <label for="size_1">Four Barrel</label>
+			    </p>
+			    <p>
+			      <input type="radio" name="size" id="size_2" value="stanza"/>
+			      <label for="size_2">Stanza</label>
+			    </p>
+			    <p>
+			      <input type="radio" name="size" id="size_3" value="saintfrank" />
+			      <label for="size_3">Saint Frank</label>
+			 	</p>
+		</fieldset>
+		<fieldset>
+			
+			<p>
+			<div>
+				<input type="checkbox" name="cb-agree" value="agree">
+				I like filling out forms!
+			</div>
+			<p>
+			<div>
+				<label>How hungry are you right now?</label>
+				<input type="text" name="hungerlevel" placeholder="hunger level">
+			</div>
+
+		</fieldset>
+		<button type="submit">Submit this form!</button>
+	</form>
+
+</body>
+</html>
