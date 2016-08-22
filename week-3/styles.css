@@ -1,0 +1,45 @@
+body {
+	background-color: pink;
+	font-size: 18px;
+	font-family: Helvetica;
+}
+
+#sec1 p {
+	width: 300px;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 25px;
+    background-color: purple;
+    font-style: italic;
+}
+
+nav {
+	width: 150px;
+	display: inline-block;
+	vertical-align: top; 
+}
+
+main {
+	width: 960px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+ul {
+	list-style-type: square;
+}
+
+h1, h2, h3 {
+	letter-spacing: 5px;
+}
+
+h1:hover, h2:hover, h3:hover {
+	background-color: red;
+
+}
+
+th {
+	text-decoration: underline;
+}
+
+tr:nth-child(even) {background: #CCC}
