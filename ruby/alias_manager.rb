@@ -33,3 +33,8 @@ def encrypt_name(name)
 end
 
 encrypt_name(name)
+
+# I spent three days on this solo challenge and with Glenna's help I was able to get it to come this far. 
+# To create an interface, I would need to ask to create a method that asks the user for his or her first and
+# last name, and then initialize it so it performs its full funtion. It would ask the user to go again
+# via a loop till the user types "quit." 
