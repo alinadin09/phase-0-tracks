@@ -12,3 +12,4 @@
 # Skip
 # Run
 # Jump
+# Cry
