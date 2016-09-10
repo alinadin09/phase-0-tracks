@@ -39,4 +39,4 @@ encrypt_name(name)
 # To create an interface, I would need to ask to create a method that asks the user for his or her first and
 # last name, and then initialize it so it performs its full funtion. It would ask the user to go again
 # via a loop till the user types "quit." 
->>>>>>> master
+
