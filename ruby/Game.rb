@@ -30,19 +30,15 @@ Game
 
 # input: string of one letter
 # steps: 
-	# letter gets fed into array working_word, remaining guess_chances becomes x-1
-	# IF the letter in working_word matches an element in correct_word user2 gets message, "Good guess! Keep going 
-		# You have #{x-1} guesses left."
-	# ElSIF the letter in working_word DOES NOT match en element in correct_word, user2 gets message, 
-	# "Sorry! Try again, you have #{x-1} guesses left." 
+	# letter gets fed into array working_word, 
+		# if the letter is a match with correct_word, remaining guess_chances becomes x-1
+			# PRINT "Good guess! Keep going; You have #{x-1} guesses left."
+		# elsif the letter is not a match AND is a duplicate, guess_chances is unchanged
+		# elsif the letter is not a match, guess_chances goes down
+			# PRINT "Sorry! Try again, you have #{x-1} guesses left." 
 	# When guesses are 0:
 		# IF working_word == correct_word the user has won
 		# ELSE the user has lost. 
-
-
-	# If there is a match between an element of correct_word and element of guessed it gets fed into the 
-	# working_word array. 
-	# when correct_word and working_word look the same, game over and the second user has won. 
 
 class WordGame
 	@guess_count
