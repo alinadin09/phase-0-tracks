@@ -1,7 +1,7 @@
 # Virus Predictor
 
 # I worked on this challenge with: Carol Silva
-# We spent [12] hours on this challenge.
+# We spent [6] hours on this challenge.
 
 # EXPLANATION OF require_relative
 #
@@ -12,7 +12,9 @@ require_relative 'state_data'
 
 class VirusPredictor
 
-  def initialize(state_of_origin, population_density, population) # initilaize method is taking the keys within the argument
+  # initilaize method is taking the keys within the argument
+
+  def initialize(state_of_origin, population_density, population) 
     @state = state_of_origin
     @population = population
     @population_density = population_density
@@ -98,3 +100,34 @@ STATE_DATA.each { |states, purp_data|
 
 #=======================================================================
 # Reflection Section
+
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+
+  # One used a hash rocket and one used the normal syntax we've been seeing over the past few weeks.
+
+# What does require_relative do? How is it different from require?
+
+  # It links the two ruby files together. Require is a term I am not too sure about still, but am guessing
+  # that it is related to staying within the root of a single file in and of itself. 
+
+# What are some ways to iterate through a hash?
+
+# By using a .each and either doing a do/end statement or by using curly brackets: {}. You iterate by specifying the 
+# the key and value in the pipes ||, and then calling upon them according to the proper syntax and calling a
+# method on them. 
+
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+
+# That a lot of them overlapped, and could easily be called upon only once or twice for their respective methods.
+# The methods that were written we good if used by themselves, but since a lot of the data in state_data was called
+# on multiple times, it was useful to link everything togther more effciently so the code was not as clunky.
+
+# What concept did you most solidify in this challenge?
+
+# Line 97 took my pair and me a long time to figure out. We were unsure of how to make the code more standardized,
+# and didn't realize that we could directly write STATE_DATA.each as a call. I'm still unfamiliar with all the
+# terminology, so it takes me a while to understand exactly what the directions are asking. We talked it out a lot
+# and looked at example codes on the web to get a better understanding. Not gonna lie, it is pretty difficult to
+# troubleshoot for three hours at the end of the day when you're so tired!!
+
+
