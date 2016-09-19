@@ -1,3 +1,5 @@
+require_relative 'dancer.rb'
+
 describe Dancer do
   let(:dancer) { Dancer.new("Misty Copeland", 33) }
 
@@ -7,6 +9,10 @@ describe Dancer do
 
   it "bows to a partner" do
     expect(dancer.bow).to eq "*bows*"
+  end
+
+  it "leaps" do
+    expect(dancer.leap).to eq "*leaps*"
   end
 
   it "has a readable name" do
