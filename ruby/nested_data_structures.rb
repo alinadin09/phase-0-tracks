@@ -19,7 +19,9 @@ uc_berkeley = {
         nickname: "Crazytown"
     },
 
-    for_fun: []
+    for_fun: {
+
+    }
 
 }
 
@@ -28,6 +30,8 @@ p uc_berkeley
 uc_berkeley[:campus][:majors] = "marine biology"
 puts "----------"
 puts "newly added stuff"
+
+uc_berkeley[:for_fun][:restaurants] = "Cheeseboard"
 p uc_berkeley
 
 
