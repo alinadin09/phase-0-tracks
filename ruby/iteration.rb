@@ -9,7 +9,7 @@
 
 #Release 1:
 
-	baby_names = ["Arya", "Zain", "Raheem", "Haqq"]
+	names = ["Arya", "Zain", "Raheem", "Haqq"]
 	feeder = []
 
 	top_news = { 
@@ -25,7 +25,7 @@
 	puts "After .each modification on array:"
 	baby_names.each { |name| puts "These are the names I like: #{name}" }
 	puts "After .map! modification on array:"
-	baby_names.map! { |name| p "Cute "  + "#{name}" }
+	baby_names.map! { |name| p "And the winner is... "  + "#{name}" }
 	p baby_names
 
 	puts "Before modifying the hash:"
@@ -45,8 +45,10 @@
 		100 => "one hundred"
 	}
 
-	# hash.delete_if { |digit, word| digit < 5 }
-	# p hash
+	# 1. 
+	hash.delete_if { |digit, word| digit < 5 }
+	p hash
 
+	# 2.
 	hash.keep_if { |digit, word| digit < 5 }
 	p hash
