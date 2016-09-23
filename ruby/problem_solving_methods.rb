@@ -3,16 +3,13 @@
 
 # Release 0
 
-hotels = [1, 2, 3, 4, 5]
+arr = [1, 2, 3, 4, 5]
 
-def hotels(search_array)
-	search_array.each do |hotel|
-		puts hotels.length
-		
-end
-
+def search_array(arr, x)
+  puts arr.at(x)
 end 
-hotels[3]
+
+search_array(arr, 34)
 
 # Release 1
 

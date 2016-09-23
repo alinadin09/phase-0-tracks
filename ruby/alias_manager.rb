@@ -1,5 +1,7 @@
+loop do 
 puts "please enter your name"
 name = gets.chomp
+break if name == 'quit'
 	
 #turns name into an array with two elements.
 # arrayed_name = original_name.split(' ')
@@ -29,9 +31,16 @@ def encrypt_name(name)
 			# this is for the spaces
 		end
 	end
-	puts alias_name.split.map(&:capitalize)*' '
+	puts encrypted_name = alias_name.split.reverse.map(&:capitalize)*' '
 end
 
-encrypt_name(name)
+
+
+puts "This is your alias name!"
+p encrypt_name(name)
+
+end
+
 
 #what else to add?
+

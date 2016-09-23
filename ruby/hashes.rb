@@ -44,6 +44,7 @@ input = gets.chomp
 			elsif update == :ombre
 				job_app[:ombre] = repsonse
 			end		
+
 		
 		p job_app
 
@@ -52,3 +53,4 @@ input = gets.chomp
 		puts "Great! You're done."
 		p job_app
 	end
+
