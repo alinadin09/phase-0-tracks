@@ -20,11 +20,11 @@
 		footer:"Trump sucks and we don't care anymore" 
 
 	}
-	puts "Before modification:"
+	puts "Before modifiying the array:"
 	p baby_names
-	puts "After .each modification"
+	puts "After .each modification on array:"
 	baby_names.each { |name| puts "These are the names I like: #{name}" }
-	puts "After .map! modification"
+	puts "After .map! modification on array:"
 	baby_names.map! { |name| p "Cute "  + "#{name}" }
 	p baby_names
 

@@ -1,40 +1,33 @@
-highway = {
-    hov: {
-        name: 'hov',
-        lanes: {
-            total_lanes: 2,
-            lanes_available: 0
-        },
-        vehicles: [
-            "2 people car", 
-            "motorcycle"
-        ]
+uc_berkeley = {
+    campus: {
+        libraries: [
+            "Doe", 
+            "Wheeler", 
+            "Stacks"
+            ],
+
+        academic_ranking: "number 1 public university",
+        
+        people: {
+        professors: 500,
+        undergraduates: 30000
+        }
     },
-    regular: {
-        name: 'regular',
-        lanes: {
-            total_lanes: 3,
-            lanes_available: 2
-        },
-        vehicles: [
-            "vans", 
-            "freigt vehicles",
-            "trucks",
-            "cars"
-        ]
+
+    city: {
+        official_name: "City of Berkeley",
+        nickname: "Crazytown"
     },
-    ramp: {
-        name: 'ramp',
-        type: {
-            on_ramp: 1,
-            off_ramp: 1
-        },
-        vehicles: []
-    }
+
+    for_fun: []
+
 }
 
+p uc_berkeley
 
-highway[:hov][:vehicles][1]
-highway[:ramp][:type]
-highway[:ramp][:vehicles].push("full")
-highway[:ramp]
+uc_berkeley[:campus][:majors] = "marine biology"
+puts "----------"
+puts "newly added stuff"
+p uc_berkeley
+
+
