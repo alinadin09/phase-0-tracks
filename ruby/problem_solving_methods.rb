@@ -22,25 +22,19 @@ p search_array(trial, 70)
 
 def fib(number)
 
+fib_group = [0, 1]
+placeholder = 0  
   
-(number-2).times do
-  
-  fib_group = [0, 1]
+  (number-2).times do
+    sum_of_previous_two = fib_group[-1] + fib_group[-2]
+    fib_group << sum_of_previous_two
+    end 
     
-    placeholder = 0 
-    while placeholder < fib_group.length  
-         
-      sum_of_previous_two = fib_group[-1] + fib_group[-2]
-      fib_group << sum_of_previous_two
-        placeholder += 1
-      
-      end
-  
-end
-
-p fib_group
+ p fib_group
 
 end
+
+
 
 
 p fib(6)
