@@ -20,7 +20,7 @@ p search_array(trial, 70)
 
 # Releae 1:
 
-def fib(number)
+def fibonacci(number)
 
 fib_group = [0, 1]
 placeholder = 0  
@@ -34,7 +34,20 @@ placeholder = 0
 
 end
 
+one_hundred = fib(100)
+p one_hundred[-1]
+
+# sorting method
+# method takes in a digit and analyzes the digit and stores it in an array, putting it in a proper pace of already
+# sorted digits, from least to greatest. it would asses the value of the digit and put it between two other
+# digits, where the one on the right is greater, and the one on the left is less. 
+
+def sorting(arr, x)
+  index = 0
+  while index < arr.length
+    
+  end
+end
 
 
 
-p fib(6)
