@@ -23,8 +23,7 @@ p search_array(trial, 70)
 def fibonacci(number)
 
 fib_group = [0, 1]
-placeholder = 0  
-  
+   
   (number-2).times do
     sum_of_previous_two = fib_group[-1] + fib_group[-2]
     fib_group << sum_of_previous_two
@@ -38,16 +37,33 @@ one_hundred = fib(100)
 p one_hundred[-1]
 
 # sorting method
-# method takes in a digit and analyzes the digit and stores it in an array, putting it in a proper pace of already
-# sorted digits, from least to greatest. it would asses the value of the digit and put it between two other
-# digits, where the one on the right is greater, and the one on the left is less. 
+# method takes in a digit x and analyzes the digit and stores it in an array, putting it in a proper place where
+# each element is sorted from least to greatest. This is done by:
+  # IF digit at end is greatest, it stays there.
+  # ELSIF digit at end is more than x, move it further up front till the digit on its
+  # left is less than x
 
 def sorting(arr, x)
+  arr << x  
   index = 0
-  while index < arr.length
+  n = arr.length
+  
+  while index < n
+    (n-1).times do |i|
+      if arr[i] > arr[i+1]
+      arr[i], arr[i+1] = arr[i+1], arr[i]
+      end
+      
+    end
+    index += 1
     
-  end
+  end 
+  p arr
+  
 end
+
+group = [1, 0, 0, 10, 3]
+sorting(group, 2)
 
 
 
