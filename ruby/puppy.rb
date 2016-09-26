@@ -1,5 +1,5 @@
 # SPECIES -------------
-# A type of dog
+# golden retriever
 
 # CHARACTERISTICS -----------
 # Ears: soft and fluffy
