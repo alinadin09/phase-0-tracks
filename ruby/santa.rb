@@ -47,14 +47,11 @@ example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer n
 5.times do | santa |
 puts "---------"
 santa = Santa.new(example_genders.sample, example_ethnicities.sample)
-santas_age = santa.age = rand(140)
-puts "santa's age is: #{santas_age}"
+santa.age = rand(140)
+puts "santa's age is: #{santa.age}"
 puts "santa's gender is: " + santa.gender
 puts "santa's ethnicity is: " + santa.ethnicity
 end
-
-
-
 
 # santas = []
 
