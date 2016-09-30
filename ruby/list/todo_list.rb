@@ -1,24 +1,18 @@
 class TodoList
-
-def initialize(arr)
-	@arr = arr 
-end
-
-def get_items
-	@arr
-end
-
-def add_item(chore)
-	@arr << chore
-end
-
-def delete_item(chore)
-	@arr.delete(chore)
-end
-
-def get_item(index)
-	@arr.at(index)
-end
-
+  def initialize(array)
+    @to_do_list=array
+  end
+  def get_items
+    @to_do_list
+  end
+  def add_item(input)
+    @to_do_list << input
+  end
+  def delete_item(input)
+    @to_do_list.delete(input)
+  end
+  def get_item(index)
+    @to_do_list[index]
+  end
 end
 
