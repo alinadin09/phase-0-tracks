@@ -1,24 +1,24 @@
 module Shout
 	def yell_angrily(words)
-    puts "#{words}!!! :("
+    words + "!!!" + " :("
   end
 
-  	def yell_happily(words)
-  		puts "#{words}, yesssss!!! :-D"
-  	end
-
-end
-
-class Butcher
-	include Shout
+  def yell_happily(words)
+  	words + " yippppeeee!!"
+  end
 end
 
 class Child
 	include Shout
 end
 
-tony = Butcher.new
-tony.yell_happily("Great meat today")
+class Husband
+	include Shout
+end
 
-samantha = Child.new
-samantha.yell_angrily("nooooo")
+child = Child.new
+p child.yell_angrily("no")
+
+
+husband = Husband.new
+p husband.yell_happily("wow")
