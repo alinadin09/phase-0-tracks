@@ -31,11 +31,13 @@ def WordGame
 	end
 
 	def user_feedback(letter)
-	correct_word_hash = {
-		@correct_word: 
-	}
+	arr = Array.new(@correct_word.length, "-")
 		if @correct_word.include?(letter)
-
+		p arr.insert(@correct_word[letter], letter)
+		else
+		p arr
+		end
+	end
 	
 
 
