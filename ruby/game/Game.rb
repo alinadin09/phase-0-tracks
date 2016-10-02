@@ -11,7 +11,7 @@
 # correct_word.
 
 class Game
-	attr_accessor :correct_word, :working_word, :guess_count, :length
+	attr_reader :correct_word, :working_word, :guess_count, :length
 
 	def initialize(correct_word)
 		@correct_word = correct_word
@@ -19,18 +19,27 @@ class Game
 		@working_word = Array.new(@length, "-")
 		@guess_count = 0
 		@all_guesses = []
-		@user_feedback
 	end
 	
 	def increase_guess_count_when_adding_letter(letter)
-		puts "please enter a guess"
 		@all_guesses << letter
 		@guess_count += 1
-		p @all_guesses
+		puts "You have #{(@length - @guess_count)} guesses left"
+		p user_feedback(letter)
 	end
 	
+	def user_feedback(letter)
+		if @correct_word.include?(letter)
+			@working_word.delete_at(@correct_word.index(letter))
+			@working_word.insert(@correct_word.index(letter), letter).join(' ')
+		else
+			p @working_word.join(' ')
+		end 	
+	end
 	
-  
+	def repeated_guesses_dont_count(letter)
+		
+	end
   	
   	
 end
@@ -40,11 +49,12 @@ end
 
 
 puts "User 1 (aka keeper of secrets) please enter your word:"
-correct_word = gets.chomp
+correct_word = gets.chomp.split('')
 game = Game.new(correct_word)
 
-while game.guess_count < 4
+while game.guess_count < game.length 
 puts "User 2, please enter your guess:"
 letter = gets.chomp
 game.increase_guess_count_when_adding_letter(letter)
+# game.repeated_guesses_dont_count(letter)
 end 
