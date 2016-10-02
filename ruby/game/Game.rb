@@ -11,35 +11,28 @@
 # correct_word.
 
 class Game
-	attr_reader :correct_word, :working_word, :guess_count, 
+	attr_accessor :correct_word, :working_word, :guess_count, :length
 
 	def initialize(correct_word)
-		@correct_word = correct_word.split("")
-		@working_word = Array.new(@correct_word.length, "-")
+		@correct_word = correct_word
+		@length = correct_word.length
+		@working_word = Array.new(@length, "-")
 		@guess_count = 0
 		@all_guesses = []
+		@user_feedback
 	end
-
 	
-
-	def user_feedback(letter)
-	@guess_count = 0
-	arr = Array.new(@correct_word.length, "-")
-		while @guess_count < @correct_word.length
-		puts "Enter another guess"
-			loop do
-			break if @guess_count = @correct_word.length
-			add_letter_to_working_word(letter)	
-				if @correct_word.include?(letter)
-				p new_arr = arr.insert(@correct_word.index(letter), letter)
-				else
-				p arr
-				puts "You have #{guess_count} guesses left"
-				end
-			@guess_count += 1
-			end
-		end	
-	end	
+	def increase_guess_count_when_adding_letter(letter)
+		puts "please enter a guess"
+		@all_guesses << letter
+		@guess_count += 1
+		p @all_guesses
+	end
+	
+	
+  
+  	
+  	
 end
 
 # driver code / ui
@@ -50,6 +43,8 @@ puts "User 1 (aka keeper of secrets) please enter your word:"
 correct_word = gets.chomp
 game = Game.new(correct_word)
 
+while game.guess_count < 4
 puts "User 2, please enter your guess:"
 letter = gets.chomp
-p game.user_feedback(letter)
+game.increase_guess_count_when_adding_letter(letter)
+end 
