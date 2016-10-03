@@ -47,30 +47,30 @@ class Game
   	
 end
 
-# driver code / ui
+driver code / ui
 
 
 
-# puts "User 1 (aka keeper of secrets) please enter your word:"
-# correct_word = gets.chomp.split('')
-# game = Game.new(correct_word)
+puts "User 1 (aka keeper of secrets) please enter your word:"
+correct_word = gets.chomp.split('')
+game = Game.new(correct_word)
 
-# while game.guess_count < game.length
+while game.guess_count < game.length
 
-# puts "User 2, please enter your guess:"
-# letter = gets.chomp
+puts "User 2, please enter your guess:"
+letter = gets.chomp
 
-# game.repeated_guesses_dont_count(letter)
+game.repeated_guesses_dont_count(letter)
 
-# game.increase_guess_count_when_adding_letter(letter)
+game.increase_guess_count_when_adding_letter(letter)
 
-# 	break if correct_word == game.working_word
-# end 
+	break if correct_word == game.working_word
+end 
 
-# if correct_word == game.working_word
-# 	puts "You won!"
-# else
-# 	puts "Sorry, you didn't guess enough letters in time!"
-# end
+if correct_word == game.working_word
+	puts "You won!"
+else
+	puts "Sorry, you didn't guess enough letters in time!"
+end
 
 
