@@ -11,7 +11,7 @@
 	# otherwise, he has lost.
 
 class Game
-	attr_reader :correct_word, :working_word, :guess_count, :length
+	attr_reader :correct_word, :working_word, :guess_count, :length, :all_guesses
 
 	def initialize(correct_word)
 		@correct_word = correct_word
@@ -29,16 +29,12 @@ class Game
 	end
 	
 	def user_feedback(letter)
-		@correct_word.each do |element|
+		@correct_word.each_with_index do |element, index|
 			if element == letter 
-			@working_word.replace(@correct_word.index(letter), letter)
-			# if @correct_word.include?(letter)
-			# 	@working_word.delete_at(@correct_word.index(letter))
-			# 	@working_word.insert(@correct_word.index(letter), letter).join(' ')
-			else
-				p @working_word.join(' ')
+				@working_word[index] = letter
 			end
 		end
+		 @working_word.join(' ')
 	end
 	
 	def repeated_guesses_dont_count(letter)
@@ -59,11 +55,22 @@ puts "User 1 (aka keeper of secrets) please enter your word:"
 correct_word = gets.chomp.split('')
 game = Game.new(correct_word)
 
-while game.guess_count < game.length 
+while game.guess_count < game.length
+
 puts "User 2, please enter your guess:"
 letter = gets.chomp
+
 game.repeated_guesses_dont_count(letter)
+
 game.increase_guess_count_when_adding_letter(letter)
+
+	break if correct_word == game.working_word
 end 
+
+if correct_word == game.working_word
+	puts "You won!"
+else
+	puts "Sorry, you didn't guess enough letters in time!"
+end
 
 
