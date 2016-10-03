@@ -31,37 +31,32 @@ class Game
 	def user_feedback(letter)
 		@correct_word.each_with_index do |element, index|
 			if element == letter 
-				@working_word[index] = letter
+			@working_word[index] = letter
 			end
 		end
-		 @working_word.join(' ')
+		@working_word.join(' ')
 	end
 	
 	def repeated_guesses_dont_count(letter)
 		if @all_guesses.include?(letter)
-			puts "You already guessed that!"
-			@guess_count -= 1
+		puts "You already guessed that!"
+		@guess_count -= 1
 		end
 	end
-  	
-  	
+  	  	
 end
 
-driver code / ui
-
-
+# driver code / ui
 
 puts "User 1 (aka keeper of secrets) please enter your word:"
 correct_word = gets.chomp.split('')
 game = Game.new(correct_word)
 
 while game.guess_count < game.length
-
 puts "User 2, please enter your guess:"
 letter = gets.chomp
 
 game.repeated_guesses_dont_count(letter)
-
 game.increase_guess_count_when_adding_letter(letter)
 
 	break if correct_word == game.working_word
