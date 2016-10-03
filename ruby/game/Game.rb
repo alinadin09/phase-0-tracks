@@ -1,14 +1,14 @@
-# pseudocode
-# correct_word is an ARRAY
-# working_word is an ARRAY that keeps getting letters pushed into it. the length of this
-	# must be equal to correct_word. it won't add the same letter more than necessary.
-
-# guess_count is a WHILE loop that keeps track of guesses. Once the guesses are up
-# it prints, "You are now out of guesses!" 
-
-# user_feedback prints the progress of guesses in terms of if working word has a 
-# match with correct_word. It will only fill in the blanks if there is a match with
-# correct_word.
+# Pseudocode:
+# 1. user 1 gets prompted for a word, which gets stored as correct_word.
+# 2. correct_word gets broken into an array.
+# 3. user 2 gets prompted for a guess. guesses are limited to the length of correct_word.
+	# each time the user makes a guess of 1 letter, guess_count goes up by 1.
+# 4. guesses are stored in the all_guesses array.
+	# if there is a match between all_guesses and correct_word, the letter will
+	# get pushed into a working_word array, at the correct index spot.
+# 5. as user 2 makes a guess, he gets a user_feedback string printed each time, until guesses are up, that shows where his correct_guesses have gone. the letters he has not guessed yet are replaced_with a "-."
+# 6. when guesses are up, if all_guesses match correct_word he has won.
+	# otherwise, he has lost.
 
 class Game
 	attr_reader :correct_word, :working_word, :guess_count, :length
@@ -58,3 +58,4 @@ letter = gets.chomp
 game.increase_guess_count_when_adding_letter(letter)
 # game.repeated_guesses_dont_count(letter)
 end 
+
