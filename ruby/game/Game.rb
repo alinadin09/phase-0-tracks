@@ -1,95 +1,61 @@
-Game
+# Pseudocode:
+# 1. user 1 gets prompted for a word, which gets stored as correct_word.
+# 2. correct_word gets broken into an array.
+# 3. user 2 gets prompted for a guess. guesses are limited to the length of correct_word.
+	# each time the user makes a guess of 1 letter, guess_count goes up by 1.
+# 4. guesses are stored in the all_guesses array.
+	# if there is a match between all_guesses and correct_word, the letter will
+	# get pushed into a working_word array, at the correct index spot.
+# 5. as user 2 makes a guess, he gets a user_feedback string printed each time, until guesses are up, that shows where his correct_guesses have gone. the letters he has not guessed yet are replaced_with a "-."
+# 6. when guesses are up, if all_guesses match correct_word he has won.
+	# otherwise, he has lost.
 
-# pseudocode
+class Game
+	attr_reader :correct_word, :working_word, :guess_count, :length
 
-# 1. One user enters a word 
-# 2. Another user attempts to guess the word by entering one letter at a time, called a "trial." 
-# (trial = number of letters in the word)
-# 3. After the trials are over, the second user either wins or loses depending if he or she got all the letters right.
+	def initialize(correct_word)
+		@correct_word = correct_word
+		@length = correct_word.length
+		@working_word = Array.new(@length, "-")
+		@guess_count = 0
+		@all_guesses = []
+	end
+	
+	def increase_guess_count_when_adding_letter(letter)
+		@all_guesses << letter
+		@guess_count += 1
+		puts "You have #{(@length - @guess_count)} guesses left"
+		p user_feedback(letter)
+	end
+	
+	def user_feedback(letter)
+		if @correct_word.include?(letter)
+			@working_word.delete_at(@correct_word.index(letter))
+			@working_word.insert(@correct_word.index(letter), letter).join(' ')
+		else
+			p @working_word.join(' ')
+		end 	
+	end
+	
+	def repeated_guesses_dont_count(letter)
+		
+	end
+  	
+  	
+end
 
-# Repeated guesses do not count against the user.
-# The guessing player receives continual feedback on the current state of the word. 
-# So if the secret word is "unicorn", the user will start out seeing 
-# something like "_ _ _ _ _ _ _", which would become "_ _ _ c _ _ _" after the user enters a guess of "c".
-# The user should get a congratulatory message if they win, and a taunting message if they lose.
+# driver code / ui
 
-# -------------------------
 
-# input: first user enters his name as a STRING
-# steps: it gets stored as user1
 
-# input: a string of the correct_word 
-# steps:
-	# String correct_word becomes an array through characters.
-	# guess_chances will be equal to the length of the correct_word array.
+puts "User 1 (aka keeper of secrets) please enter your word:"
+correct_word = gets.chomp.split('')
+game = Game.new(correct_word)
 
-# input: second user enters his name as a string (this gets fed into a class variable or getter method?)
-# steps: it gets stored as user2
-
-# Game gets initialized and user2 is prompted for his first guess
-
-# input: string of one letter
-# steps: 
-	# letter gets fed into array working_word, 
-		# if the letter is a match with correct_word, remaining guess_chances becomes x-1
-			# PRINT "Good guess! Keep going; You have #{x-1} guesses left."
-		# elsif the letter is not a match AND is a duplicate, guess_chances is unchanged
-		# elsif the letter is not a match, guess_chances goes down
-			# PRINT "Sorry! Try again, you have #{x-1} guesses left." 
-	# When guesses are 0:
-		# IF working_word == correct_word the user has won
-		# ELSE the user has lost. 
-
-class WordGame
-	@guess_count
-	@correct_word
-	@working_word
-	@match
-	@is_over
-
- def initialize
- 	@correct_word = ""
- 	@guess_count = 0 
- 	@is_over = false
- 	@match = false 
- end 
- 	
- def correct_word
- 		@correct_word
- end
- 	
- def game_stop(index)
- 	@guess_count += 1 
- 	if @guess_count == @correct_word.count
- 		@is_over = true
- 		puts "You have maxed your guess counts!"
- 	else
- 		false
- 	end
- end
- 
- def working_word
- 	@working_word = []
- end 
- 		
- 	
+while game.guess_count < game.length 
+puts "User 2, please enter your guess:"
+letter = gets.chomp
+game.increase_guess_count_when_adding_letter(letter)
+# game.repeated_guesses_dont_count(letter)
 end 
- 	
-# user interface
 
-puts "Welcome to the Word Game!"
-game = WordGame.new 
-
-puts "To the keeper of secrets: What is your name?"
-user1 = gets.chomp
-
-puts "To the guesser of secrets: What is your name?"
-user2 = gets.chomp 
-
-puts "#{user1}, please enter your secret word:"
-correct_word = gets.chomp.split("") 
-
-while !game.is_over
-puts "#{user2}, please guess a letter."
-guess = gets.chomp 
-working_word << guess
