@@ -29,16 +29,23 @@ class Game
 	end
 	
 	def user_feedback(letter)
-		if @correct_word.include?(letter)
-			@working_word.delete_at(@correct_word.index(letter))
-			@working_word.insert(@correct_word.index(letter), letter).join(' ')
-		else
-			p @working_word.join(' ')
-		end 	
+		@correct_word.each do |element|
+			if element == letter 
+			@working_word.replace(@correct_word.index(letter), letter)
+			# if @correct_word.include?(letter)
+			# 	@working_word.delete_at(@correct_word.index(letter))
+			# 	@working_word.insert(@correct_word.index(letter), letter).join(' ')
+			else
+				p @working_word.join(' ')
+			end
+		end
 	end
 	
 	def repeated_guesses_dont_count(letter)
-		
+		if @all_guesses.include?(letter)
+			puts "You already guessed that!"
+			@guess_count -= 1
+		end
 	end
   	
   	
@@ -55,7 +62,8 @@ game = Game.new(correct_word)
 while game.guess_count < game.length 
 puts "User 2, please enter your guess:"
 letter = gets.chomp
+game.repeated_guesses_dont_count(letter)
 game.increase_guess_count_when_adding_letter(letter)
-# game.repeated_guesses_dont_count(letter)
 end 
+
 
