@@ -14,3 +14,8 @@ function reverse(str) {
    console.log(reversed);
 
   }
+
+  for (var i = 10; i > 0; i--) {
+  	console.log(i)
+
+  }
