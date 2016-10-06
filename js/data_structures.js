@@ -1,40 +1,40 @@
-// 7.2 pairing session with alinadin09 and jacobgwilliams
+// 7.2 pairing session with alinadin09 and von-ashley
 
-var colors = ["blue", "green", "red", "orange"];
-var names = ["Ed", "Shadowfax", "Black Beauty", "Seabiscuit"];
+var color = ['pink', 'purple', 'blue', 'yellow'];
+var names = ['Sun', "Storm", 'Sky', 'BlackBeauty'];
 
-colors.push("purple");
-names.push("MacBook Pro");
-
-console.log(colors);
-console.log(names);
+color.push('red');
+names.push('Fluffy');
 
 var horses = {};
 
-for (var i = 0; i < colors.length; i++) {
-  horses[names[i]] = colors[i];
+for(var i = 0; i < color.length; i++){
+	horses[names[i]] = color[i];
 }
-
 console.log(horses);
 
-// Car maker
-
-function Car(color, year, make, model, hasFourWheelDrive){
-  console.log("New car:", this);
-  this.color = color;
-  this.year = year;
-  this.make = make;
-  this.model = model;
-  this.hasFourWheelDrive = hasFourWheelDrive;
-
-  this.revEngine = function() { console.log("Vroom vroom!"); };
-
-  console.log("CAR COMPLETE");
+//////////////////////
+function Car(model, year, itWorks){
+	console.log("Our new car:", this);
+	
+	this.model = model;
+	this.year = year;
+	this.itWorks = itWorks;
+	
+	this.engine = function() { console.log("Vroom Vroom"); };
 }
 
-var aCar = new Car("blue", 1999, "Ford", "Taurus", false);
-var alinasCar = new Car("white", 2001, "Honda", "Civic", false);
-console.log(aCar);
-console.log(alinasCar);
-aCar.revEngine();
-alinasCar.revEngine();
+var newCar = new Car("Porche", 2017, true);
+console.log(newCar);
+newCar.engine();
+
+var ashDream = new Car("Viper", 2020, true);
+console.log(ashDream);
+
+// function() { console.log("*sings opera song*")};
+// bird.newTrick();
+
+newCar.reverse = function() {console.log("*Beep Beep*")};
+console.log(newCar.reverse());
+
+
