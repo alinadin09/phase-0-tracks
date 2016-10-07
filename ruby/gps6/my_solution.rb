@@ -1,7 +1,7 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge with: Jake .
+# We spent 1.5 hours on this challenge.
 
 # EXPLANATION OF require_relative
 # Tells you to look at the other file within the same directory.
@@ -97,10 +97,18 @@ alaska.virus_effects
 #=======================================================================
 # Reflection Section
 # What are the differences between the two different hash syntaxes shown in the state_data file?
+  # the first key is followed by a hash rocket, and the hash within the hash is separated by a :
 # What does require_relative do? How is it different from require?
+    # It differs from 'require' because the former complements the builtin method require by 
+    # allowing you to load a file that is relative to the file containing the require_relative statement.
 # What are some ways to iterate through a hash?
+  # You can do .each do, and also do an .each_key, .each_pair, .each_value.
 # When refactoring virus_effects, what stood out to you about the variables, if anything?
+  #It is redundant to define parameters and feed arguments in it, because the instance variables are available within the 
+  # class, anywhere, so you don't need to re-define them. 
 # What concept did you most solidify in this challenge?
+  # Doing the iteration through STATE_DATA and iterating through the hash within the hash, by calling the values in the key
+  # in the pipes.
 
 
 
