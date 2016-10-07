@@ -4,7 +4,7 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
+# Tells you to look at the other file within the same directory
 #
 require_relative 'state_data'
 
