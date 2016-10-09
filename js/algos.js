@@ -9,7 +9,7 @@ function namelength(arr) {
 	
 	
 	var i;
-	
+	var new_variable = ""
 	for (i = 0; i < arr.length; i++) { 
 		console.log(arr[i].length);
 	}
