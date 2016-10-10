@@ -16,4 +16,4 @@ function namelength(arr) {
 
 }
 
-namelength(names);
+namelength(names); 
