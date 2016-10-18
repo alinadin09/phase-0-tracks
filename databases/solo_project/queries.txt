@@ -1,0 +1,44 @@
+Display the information in one table (either table is fine).
+
+sqlite> .tables
+clothes  stores
+sqlite> SELECT * FROM clothes;
+
+1|sweater|40|2
+2|sneakers|120|3
+3|jeans|80|4
+4|shirt|20|1
+5|scarf|15|1
+
+Update an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> UPDATE clothes SET price=20  WHERE type="sweater";
+sqlite> SELECT * FROM clothes;
+1|sweater|20|2
+2|sneakers|120|3
+3|jeans|80|4
+4|shirt|20|1
+5|scarf|15|1
+
+Display the information in both tables using one query.
+
+sqlite> SELECT * FROM clothes, stores WHERE clothes.store_id = stores.id;
+
+1|sweater|20|2|2|Nordstrom
+2|sneakers|120|3|3|Nike
+3|jeans|80|4|4|Macys
+4|shirt|20|1|1|Zara
+5|scarf|15|1|1|Zara
+
+Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> SELECT clothes.type, stores.name FROM clothes JOIN stores ON clothes.store_id = stores.id;
+sweater|Nordstrom
+sneakers|Nike
+jeans|Macys
+shirt|Zara
+scarf|Zara
+
+Delete an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> DELETE FROM stores WHERE name="Zara";
